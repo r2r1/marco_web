@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* 🌑 Основные поверхности */
+  --color-marco-bg: #131b18;
+  --color-marco-surface: #1C2522;
+  --color-marco-surface-hover: #232E2A;
+
+  /* 📝 Типографика */
+  --color-marco-text: #F5F5F5;
+  --color-marco-muted: #9CA3A0;
+  --color-marco-faint: #6B7270;
+
+  /* 🌟 Бренд (Акцент) */
+  --color-marco-accent: #D4C4A8;
+  --color-marco-accent-hover: #E0D2B8;
+
+  /* 🧩 Состояния и границы */
+  --color-marco-border: rgba(255, 255, 255, 0.08);
+  --color-marco-accent-border: rgba(212, 196, 168, 0.25);
+  --color-marco-accent-subtle: rgba(212, 196, 168, 0.08);
+  
+  /* ✅ Статусы */
+  --color-marco-success: #4ade80;
+  --color-marco-error: #f87171;
+}
+
+@layer base {
+  body {
+    @apply bg-marco-bg text-marco-text font-sans antialiased;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-tight;
+  }
+  *:focus-visible {
+    outline: 2px solid rgba(212, 196, 168, 0.4);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-marco-surface/70 backdrop-blur-xl border border-marco-border shadow-xl shadow-black/30;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-delay-200 { animation-delay: 200ms; }
+}
+
+/* Скроллбар */
