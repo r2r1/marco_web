@@ -20,6 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+            <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Для старых браузеров можно добавить PNG-версию */}
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
       <body className={`${inter.className} bg-marco-dark text-marco-text antialiased`}>
         <AppProviders>
           <Header />
