@@ -3,6 +3,8 @@
 @theme {
   /* 🌑 Основные поверхности */
   --color-marco-bg: #131b18;
+  --color-marco-dark: #131b18;
+  --color-marco-gold: #D4C4A8;
   --color-marco-surface: #1C2522;
   --color-marco-surface-hover: #232E2A;
 

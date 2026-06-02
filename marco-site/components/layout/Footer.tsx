@@ -1,60 +1,128 @@
+'use client';
+
 import Link from 'next/link';
+import { useLeadRequest } from '@/components/providers/LeadRequestProvider';
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+} from '@/lib/site-contact';
+import {
+  FOOTER_SERVICE_LINKS,
+  MAIN_NAV_LINKS,
+  SITE_DESCRIPTION,
+  SITE_TAGLINE,
+} from '@/lib/site-nav';
 
 export default function Footer() {
+  const { openLeadRequest } = useLeadRequest();
+
   return (
-    <footer className="bg-marco-dark border-t border-white/10 pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Бренд */}
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex flex-col mb-4">
-              <span className="text-2xl font-light tracking-widest text-white">MARCO</span>
-              <span className="text-[10px] tracking-widest uppercase text-marco-muted">создаем комфортную среду</span>
-            </div>
-            <p className="text-sm text-marco-muted leading-relaxed">
-              Комплексные решения для вашего пространства: от ремонта и мебели до управления недвижимостью.
+    <footer className="border-t border-marco-border bg-marco-bg/40">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-16 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-flex flex-col group">
+              <span className="text-2xl font-light tracking-[0.2em] text-marco-text group-hover:text-marco-accent transition-colors">
+                MARCO
+              </span>
+              <span className="mt-1 text-[10px] tracking-[0.22em] uppercase text-marco-faint">
+                {SITE_TAGLINE}
+              </span>
+            </Link>
+            <p className="mt-5 text-sm text-marco-muted leading-relaxed max-w-sm">
+              {SITE_DESCRIPTION}
             </p>
+            <button
+              type="button"
+              onClick={() =>
+                openLeadRequest({
+                  title: 'Бесплатная консультация',
+                  description:
+                    'Расскажите о вашем объекте — подготовим рекомендации по росту доходности.',
+                  defaultService: 'consultation',
+                  submitLabel: 'Получить консультацию',
+                })
+              }
+              className="mt-6 inline-flex items-center justify-center rounded-xl bg-marco-accent px-6 py-3 text-[11px] font-medium uppercase tracking-[0.15em] text-marco-bg hover:bg-marco-accent-hover transition-all active:scale-[0.98]"
+            >
+              Оставить заявку
+            </button>
           </div>
 
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-marco-gold mb-4">Услуги</h4>
-            <ul className="space-y-2 text-sm text-marco-muted">
-              <li>Натяжные потолки</li>
-              <li>Косметический ремонт</li>
-              <li>Мебель на заказ</li>
-              <li>Доверительное управление</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-marco-gold mb-4">Компания</h4>
-            <ul className="space-y-2 text-sm text-marco-muted">
-              <li><Link href="/about" className="hover:text-white transition-colors">О нас</Link></li>
-              <li><Link href="/portfolio" className="hover:text-white transition-colors">Портфолио</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">Блог</Link></li>
-              <li><Link href="/docs" className="hover:text-white transition-colors">Документы</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-marco-gold mb-4">Контакты</h4>
-            <ul className="space-y-3 text-sm text-marco-muted">
-              <li><a href="tel:+79991234567" className="hover:text-white transition-colors">+7 (999) 123-45-67</a></li>
-              <li><a href="mailto:info@marco.studio" className="hover:text-white transition-colors">info@marco.studio</a></li>
-              <li className="pt-2 flex gap-4">
-                <a href="#" className="text-marco-muted hover:text-marco-gold transition-colors">Telegram</a>
-                <a href="#" className="text-marco-muted hover:text-marco-gold transition-colors">WhatsApp</a>
+          <div className="lg:col-span-2">
+            <h4 className="text-[11px] uppercase tracking-[0.2em] text-marco-accent mb-4">
+              Навигация
+            </h4>
+            <ul className="space-y-2.5 text-sm text-marco-muted">
+              {MAIN_NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-marco-accent transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/portfolio" className="hover:text-marco-accent transition-colors">
+                  Все проекты
+                </Link>
               </li>
             </ul>
           </div>
+
+          <div className="lg:col-span-3">
+            <h4 className="text-[11px] uppercase tracking-[0.2em] text-marco-accent mb-4">
+              Услуги
+            </h4>
+            <ul className="space-y-2.5 text-sm text-marco-muted">
+              {FOOTER_SERVICE_LINKS.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="hover:text-marco-accent transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-3">
+            <h4 className="text-[11px] uppercase tracking-[0.2em] text-marco-accent mb-4">
+              Контакты
+            </h4>
+            <ul className="space-y-3 text-sm text-marco-muted">
+              <li>
+                <a
+                  href={`tel:${CONTACT_PHONE}`}
+                  className="text-marco-text hover:text-marco-accent transition-colors"
+                >
+                  {CONTACT_PHONE_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="hover:text-marco-accent transition-colors break-all"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+            </ul>
+            <p className="mt-5 text-xs text-marco-faint leading-relaxed">
+              Готовы увеличить доходность вашей недвижимости? Оставьте заявку — перезвоним в течение
+              15 минут.
+            </p>
+          </div>
         </div>
 
-    
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-marco-muted">
+        <div className="border-t border-marco-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-marco-faint">
           <p>© {new Date().getFullYear()} MARCO. Все права защищены.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">Политика конфиденциальности</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Публичная оферта</Link>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link href="/privacy" className="hover:text-marco-accent transition-colors">
+              Политика конфиденциальности
+            </Link>
+            <Link href="/terms" className="hover:text-marco-accent transition-colors">
+              Публичная оферта
+            </Link>
           </div>
         </div>
       </div>
