@@ -4,10 +4,12 @@ import ServicesGrid from '@/components/sections/ServicesGrid';
 import PortfolioSlider from '@/components/sections/PortfolioSlider';
 import CalculatorSection from '@/components/sections/CalculatorSection';
 import LeadRequestTrigger from '@/components/ui/LeadRequestTrigger';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
     <>
+      <Analytics/>
       <Hero />
       <ProcessSection />
       <ServicesGrid />
