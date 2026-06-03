@@ -32,9 +32,9 @@ export default function Hero() {
             <div className="mt-15 pt-8 border-t border-white/10">
               <div className="flex flex-wrap justify-center lg:justify-start gap-x-12 gap-y-8">
                 <div>
-                  <div className="text-2xl font-light text-marco-text">+35%</div>
+                  <div className="text-2xl font-light text-marco-text">+45%</div>
                   <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-marco-faint">
-                    Рост арендной ставки
+                    Рост выручки 
                   </div>
                 </div>
                 <div>

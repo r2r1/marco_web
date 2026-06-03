@@ -40,7 +40,7 @@ export default function ProcessSection() {
           </span>
 
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extralight text-marco-text">
-            Мы зарабатываем только
+            Мы зарабатываем, только
             <br />
             когда растёт ваш доход
           </h2>
