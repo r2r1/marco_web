@@ -41,7 +41,7 @@ export default function ProcessSection() {
 
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extralight text-marco-text">
             Мы зарабатываем, только
-            <br />
+            <br className="hidden sm:block" />
             когда растёт ваш доход
           </h2>
 

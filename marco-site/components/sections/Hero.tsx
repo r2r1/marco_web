@@ -5,13 +5,13 @@ import LeadRequestForm from '@/components/forms/LeadRequestForm';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center">
+    <section className="relative min-h-screen overflow-hidden flex items-center pt-20 lg:pt-0">
       <HeroBackground />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 text-center lg:text-left mt-4 lg:mt-0">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-marco-accent-border bg-marco-accent-subtle/80 backdrop-blur-sm mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-marco-accent-border bg-marco-accent-subtle/80 backdrop-blur-sm mb-6 sm:mb-12">
               <span className="w-1.5 h-1.5 rounded-full bg-marco-accent animate-pulse" />
               <span className="text-[10px] uppercase tracking-[0.24em] text-marco-accent">
                 Бесплатный аудит объекта
@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 mt-16">
+          <div className="lg:col-span-5 mt-8 lg:mt-0">
             <div className="glass-panel rounded-3xl border border-white/10 p-6 sm:p-7">
               <h2 className="text-xl font-light text-marco-text">Узнайте потенциал вашей квартиры</h2>
               <p className="mt-2 text-sm text-marco-muted">

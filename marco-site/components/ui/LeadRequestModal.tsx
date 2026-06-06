@@ -48,7 +48,7 @@ export default function LeadRequestModal({
         onClick={onClose}
       />
 
-      <div className="relative z-10 w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl border border-marco-border bg-marco-surface p-6 sm:p-8 shadow-2xl shadow-black/40">
+      <div className="relative z-10 w-full max-w-lg max-h-[90dvh] overflow-y-auto rounded-2xl border border-marco-border bg-marco-surface p-6 sm:p-8 shadow-2xl shadow-black/40">
         <div className="flex items-start justify-between gap-4 mb-6">
           <div>
             <h3 className="text-2xl font-light text-marco-text">{title}</h3>
