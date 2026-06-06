@@ -1,7 +1,9 @@
 #!/bin/bash
 # Скрипт деплоя marco-site на VPS рег.ру
-# Запускать на сервере из папки /var/www/marco_web
+# Запускать на сервере: bash /var/www/marco_web/deploy.sh
 set -e
+
+cd /var/www/marco_web
 
 echo "==> Pulling latest changes..."
 git pull origin main
@@ -16,10 +18,10 @@ npm run build
 echo "==> Copying static assets to standalone..."
 cp -r public .next/standalone/public
 cp -r .next/static .next/standalone/.next/static
+cp .env.local .next/standalone/.env.local
 
 echo "==> Restarting app..."
-cd ..
-pm2 reload ecosystem.config.js --update-env
+pm2 reload marco-site
 
-echo "==> Done! App is running."
+echo "==> Done!"
 pm2 status
