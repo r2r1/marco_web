@@ -1,7 +1,6 @@
 import Hero from '@/components/sections/Hero';
 import ProcessSection from '@/components/sections/ProcessSection';
 import ServicesGrid from '@/components/sections/ServicesGrid';
-import PortfolioSlider from '@/components/sections/PortfolioSlider';
 import CalculatorSection from '@/components/sections/CalculatorSection';
 import LeadRequestTrigger from '@/components/ui/LeadRequestTrigger';
 import { Analytics } from "@vercel/analytics/next"
