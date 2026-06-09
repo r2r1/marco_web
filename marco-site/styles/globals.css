@@ -60,4 +60,9 @@
   .animate-delay-200 { animation-delay: 200ms; }
 }
 
+/* Курсор на интерактивных элементах */
+a, button, [role="button"], select, label[for], [tabindex]:not([tabindex="-1"]) {
+  cursor: pointer !important;
+}
+
 /* Скроллбар */

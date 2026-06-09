@@ -6,12 +6,13 @@ import '@/styles/globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AppProviders from '@/components/providers/AppProviders';
+import CookieBanner from '@/components/ui/CookieBanner';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
-  title: 'MARCO | Создаем комфортную среду',
-  description: 'Натяжные потолки, ремонт, мебель и доверительное управление недвижимостью.',
+  title: 'MARCO | Эксперты в доходной недвижимости',
+  description: 'MARCO — эксперты в доходной недвижимости. Управление посуточной и долгосрочной арендой, ремонт и комплектация под ключ. Звоните: +7 (933) 179-73-33.',
 };
 
 export default function RootLayout({
@@ -58,6 +59,7 @@ export default function RootLayout({
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <CookieBanner />
         </AppProviders>
       </body>
     </html>

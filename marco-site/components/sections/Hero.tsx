@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 mt-8 lg:mt-0">
+          <div className="lg:col-span-5 mt-13 lg:mt-0">
             <div className="glass-panel rounded-3xl border border-white/10 p-6 sm:p-7">
               <h2 className="text-xl font-light text-marco-text">Узнайте потенциал вашей квартиры</h2>
               <p className="mt-2 text-sm text-marco-muted">
