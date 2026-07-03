@@ -9,6 +9,7 @@ import AppProviders from '@/components/providers/AppProviders';
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://marco-kmv.ru'),
   title: 'MARCO | Создаем комфортную среду',
   description: 'Натяжные потолки, ремонт, мебель и доверительное управление недвижимостью.',
 };
