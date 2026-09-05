@@ -63,26 +63,26 @@ export default function CalculatorSection() {
   const interactiveClass = 'relative z-20 pointer-events-auto';
 
   return (
-    <section id="calculator" className="relative z-20 py-24 px-4 sm:px-6 border-t border-marco-border bg-marco-bg/30">
+    <section id="calculator" className="relative z-20 py-16 sm:py-24 px-4 sm:px-6 border-t border-marco-border bg-marco-bg/30">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* HEADER */}
-        <div className="text-center mb-14 animate-fade-in-up">
+        <div className="text-center mb-10 sm:mb-14 animate-fade-in-up">
           <span className="inline-block text-xs uppercase tracking-widest text-marco-accent mb-4 font-medium">
             Калькулятор инвестора
           </span>
-          <h2 className="text-3xl md:text-4xl font-light text-marco-text text-balance">
-            Оцените потенциал <br className="hidden md:block" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-marco-text text-balance">
+            Оцените потенциал{' '}
             <span className="text-marco-accent italic font-normal">вашей квартиры</span>
           </h2>
-          <p className="text-marco-muted mt-4 max-w-2xl mx-auto">
+          <p className="text-marco-muted mt-4 max-w-2xl mx-auto text-sm sm:text-base">
             Настройте параметры объекта — мы покажем, насколько можно увеличить
             арендную ставку и за какой срок окупятся вложения.
           </p>
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           
           {/* ЛЕВАЯ КОЛОНКА — ВВОД */}
           <div className="glass-panel rounded-2xl p-6 sm:p-8 animate-fade-in-up">
@@ -155,7 +155,7 @@ export default function CalculatorSection() {
               {/* СОСТОЯНИЕ */}
               <div>
                 <span className="block text-xs uppercase tracking-[0.15em] text-marco-faint mb-3">Состояние</span>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 xs:grid-cols-3 gap-2">
                   <button
                     type="button"
                     onClick={() => setCondition('bad')}
@@ -183,13 +183,13 @@ export default function CalculatorSection() {
               {/* ЛОКАЦИЯ */}
               <div>
                 <span className="block text-xs uppercase tracking-[0.15em] text-marco-faint mb-3">Расположение</span>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 xs:grid-cols-3 gap-2">
                   <button
                     type="button"
                     onClick={() => setLocation('center')}
                     className={`px-3 py-2.5 rounded-lg text-[11px] uppercase tracking-[0.1em] border transition-all duration-200 cursor-pointer ${interactiveClass} ${getButtonClass(location === 'center')}`}
                   >
-                    Турцентр
+                    Центр города
                   </button>
                   <button
                     type="button"
@@ -231,7 +231,7 @@ export default function CalculatorSection() {
           {/* ПРАВАЯ КОЛОНКА — РЕЗУЛЬТАТ */}
           <div className="animate-fade-in-up animate-delay-200">
             {!result ? (
-              <div className="glass-panel rounded-2xl p-8 text-center flex flex-col items-center justify-center h-full min-h-[400px]">
+              <div className="glass-panel rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center justify-center h-full min-h-[280px] sm:min-h-[400px]">
                 <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-marco-accent-subtle text-marco-accent flex items-center justify-center">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -245,7 +245,7 @@ export default function CalculatorSection() {
               </div>
             ) : (
               <div className="space-y-4">
-                <div className="glass-panel rounded-2xl p-6 sm:p-7 border border-marco-accent/30">
+                <div className="glass-panel rounded-2xl p-5 sm:p-7 border border-marco-accent/30">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs uppercase tracking-[0.15em] text-marco-faint">Потенциальная выручка</span>
                     <span className="text-xs uppercase tracking-[0.15em] text-marco-accent">
@@ -253,17 +253,17 @@ export default function CalculatorSection() {
                     </span>
                   </div>
                   <div className="flex items-baseline gap-3">
-                    <span className="text-4xl font-light text-marco-text">
+                    <span className="text-3xl sm:text-4xl font-light text-marco-text">
                       {result.potentialRevenue.toLocaleString('ru-RU')}
                     </span>
-                    <span className="text-lg text-marco-muted">₽/мес</span>
+                    <span className="text-base sm:text-lg text-marco-muted">₽/мес</span>
                   </div>
                   <p className="text-sm text-marco-faint mt-2">
                     вместо {result.currentRevenue.toLocaleString('ru-RU')} ₽ сейчас
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   <div className="glass-panel rounded-xl p-5">
                     <span className="block text-xs uppercase tracking-[0.12em] text-marco-faint mb-1">Новая ставка</span>
                     <span className="text-xl font-light text-marco-accent">
@@ -285,7 +285,7 @@ export default function CalculatorSection() {
                       >
                         !
                       </button>
-                      <div className="pointer-events-none absolute right-0 mt-2 w-64 rounded-lg border border-marco-border bg-marco-surface/95 p-3 text-[11px] leading-relaxed text-marco-muted opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
+                      <div className="pointer-events-none absolute right-0 mt-2 w-48 sm:w-64 max-w-[80vw] rounded-lg border border-marco-border bg-marco-surface/95 p-3 text-[11px] leading-relaxed text-marco-muted opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
                         Выручка в год = выручка в месяц × 12. Показываем до и после улучшений.
                       </div>
                     </div>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant xs (@media (width >= 480px));
+
 @theme {
   /* 🌑 Основные поверхности */
   --color-marco-bg: #131b18;
@@ -58,11 +60,6 @@
     animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .animate-delay-200 { animation-delay: 200ms; }
-}
-
-/* Курсор на интерактивных элементах */
-a, button, [role="button"], select, label[for], [tabindex]:not([tabindex="-1"]) {
-  cursor: pointer !important;
 }
 
 /* Скроллбар */

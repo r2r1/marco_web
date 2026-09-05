@@ -80,30 +80,30 @@ export default function PortfolioSlider() {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-24 px-4 sm:px-6 border-t border-marco-border">
+    <section id="portfolio" className="py-16 sm:py-24 px-4 sm:px-6 border-t border-marco-border">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* HEADER */}
-        <div className="text-center mb-12 animate-fade-in-up">
+        <div className="text-center mb-8 sm:mb-12 animate-fade-in-up">
           <span className="inline-block text-xs uppercase tracking-widest text-marco-accent mb-4 font-medium">
             Наши работы
           </span>
-          <h2 className="text-3xl md:text-4xl font-light text-marco-text text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-marco-text text-balance">
             Реальные кейсы роста доходности
           </h2>
-          <p className="text-marco-muted mt-4 max-w-2xl mx-auto">
-            Каждый проект — это измеримый результат. Мы показываем, как изменилась 
+          <p className="text-marco-muted mt-4 max-w-2xl mx-auto text-sm sm:text-base">
+            Каждый проект — это измеримый результат. Мы показываем, как изменилась
             арендная ставка и скорость заселения после нашей работы.
           </p>
         </div>
 
         {/* FILTERS */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up animate-delay-200">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 animate-fade-in-up animate-delay-200">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-medium transition-all duration-300 ${
                 activeCategory === cat.id
                   ? 'bg-marco-accent text-marco-bg shadow-lg shadow-marco-accent/20'
                   : 'bg-marco-surface text-marco-faint hover:text-marco-accent hover:bg-marco-surface-hover border border-marco-border'
@@ -123,7 +123,7 @@ export default function PortfolioSlider() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image */}
-              <div className="relative h-56 sm:h-64 overflow-hidden">
+              <div className="relative h-44 sm:h-56 md:h-64 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -139,22 +139,22 @@ export default function PortfolioSlider() {
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-7">
+              <div className="p-4 sm:p-6 md:p-7">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
-                    <h3 className="text-lg font-light text-marco-text group-hover:text-marco-accent transition-colors">
+                    <h3 className="text-base sm:text-lg font-light text-marco-text group-hover:text-marco-accent transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-marco-faint mt-1">{project.location}</p>
+                    <p className="text-xs sm:text-sm text-marco-faint mt-1">{project.location}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-right flex-shrink-0">
                     <span className="block text-xl font-light text-marco-accent">{project.roi}</span>
                     <span className="text-[10px] uppercase tracking-widest text-marco-faint">Рост ставки</span>
                   </div>
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 py-4 border-t border-marco-border">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 border-t border-marco-border">
                   <div>
                     <span className="block text-xs text-marco-faint">До</span>
                     <span className="text-sm text-marco-muted line-through">{project.beforeRent}</span>

@@ -81,23 +81,23 @@ export default function ServicesGrid() {
 
   return (
     <>
-      <section id="services" className="py-24 px-6 bg-marco-bg/40 border-t border-marco-border">
+      <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 bg-marco-bg/40 border-t border-marco-border">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-center mb-10 sm:mb-16 animate-fade-in-up">
             <span className="inline-block text-xs uppercase tracking-widest text-marco-accent mb-4 font-medium">Экспертиза бренда</span>
-            <h2 className="text-3xl md:text-4xl font-light text-marco-text text-balance">Инструменты роста капитала</h2>
-            <p className="text-marco-muted mt-4 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-marco-text text-balance">Инструменты роста капитала</h2>
+            <p className="text-marco-muted mt-4 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
               Мы предлагаем не просто услуги, а систему действий, направленных на максимизацию прибыли от вашей недвижимости.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {services.map((service, index) => (
               <button
                 key={service.id}
                 type="button"
                 onClick={() => setActiveServiceId(service.id)}
-                className="group relative p-7 bg-marco-surface border border-marco-border rounded-2xl hover:border-marco-accent/40 hover:bg-marco-surface-hover transition-all duration-500 cursor-pointer animate-fade-in-up flex flex-col justify-between h-full text-left"
+                className="group relative p-5 sm:p-7 bg-marco-surface border border-marco-border rounded-2xl hover:border-marco-accent/40 hover:bg-marco-surface-hover transition-all duration-500 cursor-pointer animate-fade-in-up flex flex-col justify-between h-full text-left"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div>
